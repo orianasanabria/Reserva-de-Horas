@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Horas</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="form" class="form">
+            <h1 class="form__title">Reserva tu Hora</h1>
+            <div class="form__inputs">
+                <div class="form__inputs__box">
+                    <input type="text" id="rut" class="inputs" name="rut" placeholder="RUT">
+                    <img src="assets/img/check.svg" id="icon__success1" class="icons icons__success icons__hidden" alt="success">
+                    <img src="assets/img/error.svg" id="icon__error1" class="icons icons__error icons__hidden" alt="success">
+                </div>
+                <div class="form__inputs__box">
+                    <input type="text" id="name" class="inputs" name="name" placeholder="Nombres">
+                    <img src="assets/img/check.svg" id="icon__success2" class="icons icons__success icons__hidden" alt="success">
+                    <img src="assets/img/error.svg" id="icon__error2" class="icons icons__error icons__hidden" alt="success">
+                </div>
+                <div class="form__inputs__box">
+                    <input type="text" id="lastname" class="inputs" name="lastname" placeholder="Apellidos">
+                    <img src="assets/img/check.svg" id="icon__success3" class="icons icons__success icons__hidden" alt="success">
+                    <img src="assets/img/error.svg" id="icon__error3" class="icons icons__error icons__hidden" alt="success">
+                </div>
+                <div class="form__inputs__box">
+                    <input type="text" id="age" class="inputs" name="age" placeholder="Edad">
+                    <img src="assets/img/check.svg" id="icon__success4" class="icons icons__success icons__hidden" alt="success">
+                    <img src="assets/img/error.svg" id="icon__error4" class="icons icons__error icons__hidden" alt="success">
+                </div>
+                <div class="form__inputs__box">
+                    <input type="text" id="mail" class="inputs" name="mail" placeholder="Email">
+                    <img src="assets/img/check.svg" id="icon__success5" class="icons icons__success icons__hidden" alt="success">
+                    <img src="assets/img/error.svg" id="icon__error5" class="icons icons__error icons__hidden" alt="success">
+                </div>
+                <div class="form__inputs__box">
+                    <select id="specialty" class="inputs">
+                        <option value="0">Especialidad</option>
+                        <option value="1">Cardiología</option>
+                        <option value="2">Traumatología</option>
+                        <option value="3">Odontología</option>
+                    </select>
+                </div>
+                <div class="form__inputs__box">
+                    <input type="text" id="date" class="inputs" name="date" placeholder="Fecha">
+                    <img src="assets/img/check.svg" id="icon__success6" class="icons icons__success icons__hidden" alt="success">
+                    <img src="assets/img/error.svg" id="icon__error6" class="icons icons__error icons__hidden" alt="success">
+                </div>
+                <div class="form__inputs__box">
+                    <select id="hour" class="inputs">
+                        <option value="0">Horario</option>
+                        <option value="1">10:00</option>
+                        <option value="2">10:30</option>
+                        <option value="3">11:00</option>
+                    </select>
+                </div>
+                <button id="btn" class="form__btn" type="submit" value="Reservar">Reservar</button>
+                <div class="successBox">
+                    <p id="sent" class="sent"></p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
