@@ -1,6 +1,7 @@
 const form = document.getElementById('form');
 const boton = document.getElementById('btn');
 const texto = document.getElementById('sent')
+const textoError = document.getElementById('error')
 
 let rut = document.getElementById('rut');
 let nombre = document.getElementById('name');
@@ -24,11 +25,12 @@ boton.addEventListener('click', e=> {
     let selectHour = hour.options[hour.selectedIndex].text;
 
     e.preventDefault();
+    let sign = false;
 
-    let success = false;
     if (!regexRut.test(rut.value)){
         document.getElementById('icon__error1').classList.remove('icons__hidden')
-        success = true;
+        sign = true;
+        textoError.innerHTML = 'RUT inválido, intente de nuevo.'
     } else {
         document.getElementById('icon__error1').classList.add('icons__hidden')
         document.getElementById('icon__success1').classList.remove('icons__hidden')
@@ -37,7 +39,8 @@ boton.addEventListener('click', e=> {
     e.preventDefault();
     if (!regexName.test(nombre.value)){
         document.getElementById('icon__error2').classList.remove('icons__hidden')
-        success = true;
+        sign = true;
+        textoError.innerHTML = 'Nombre inválido, intente de nuevo.'
     } else {
         document.getElementById('icon__error2').classList.add('icons__hidden')
         document.getElementById('icon__success2').classList.remove('icons__hidden')
@@ -46,7 +49,8 @@ boton.addEventListener('click', e=> {
     e.preventDefault();
     if (!regexLastname.test(lastname.value)){
         document.getElementById('icon__error3').classList.remove('icons__hidden')
-        success = true;
+        sign = true;
+        textoError.innerHTML = 'Apellido inválido, intente de nuevo.'
     } else {
         document.getElementById('icon__error3').classList.add('icons__hidden')
         document.getElementById('icon__success3').classList.remove('icons__hidden')
@@ -55,7 +59,8 @@ boton.addEventListener('click', e=> {
     e.preventDefault();
     if (!regexAge.test(age.value)){
         document.getElementById('icon__error4').classList.remove('icons__hidden')
-        success = true;
+        sign = true;
+        textoError.innerHTML = 'Edad inválida, intente de nuevo.'
     } else {
         document.getElementById('icon__error4').classList.add('icons__hidden')
         document.getElementById('icon__success4').classList.remove('icons__hidden')
@@ -64,7 +69,8 @@ boton.addEventListener('click', e=> {
     e.preventDefault();
     if (!regexMail.test(mail.value)){
         document.getElementById('icon__error5').classList.remove('icons__hidden')
-        success = true;
+        sign = true;
+        textoError.innerHTML = 'Correo inválido, intente de nuevo.'
     } else {
         document.getElementById('icon__error5').classList.add('icons__hidden')
         document.getElementById('icon__success5').classList.remove('icons__hidden')
@@ -73,14 +79,15 @@ boton.addEventListener('click', e=> {
     e.preventDefault();
     if (!regexDate.test(date.value)){
         document.getElementById('icon__error6').classList.remove('icons__hidden')
-        success = true;
+        sign = true;
+        textoError.innerHTML = 'Fecha inválida, intente de nuevo en formato dd-mm-yyyy.'
     } else {
         document.getElementById('icon__error6').classList.add('icons__hidden')
         document.getElementById('icon__success6').classList.remove('icons__hidden')
     }
 
-    if(success){
-        texto.innerHTML = "Por favor corrija los campos inválidos. ⛔";
+    if(sign){
+        texto.innerHTML = "Por favor corrija los campos erróneos. ⛔";
     }else{
         texto.innerHTML = (`Estimado/a ${nombre.value} ${lastname.value}, su hora para ${selectSpecialty} ha sido reservada para el día ${date.value} a las ${selectHour}. Además, se le envió un mensaje a su correo ${mail.value} con el detalle de su cita. Gracias por preferirnos. 👩‍⚕️🌟`);
     }
